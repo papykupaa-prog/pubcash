@@ -97,12 +97,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 const rulesButton = document.getElementById("rulesButton");
 const rulesMessage = document.getElementById("rulesMessage");
+if (rulesButton && rulesMessage) {
+    rulesButton.addEventListener("click", function () {
+        rulesMessage.hidden = !rulesMessage.hidden;
 
-rulesButton.addEventListener("click", function () {
-    rulesMessage.hidden = !rulesMessage.hidden;
-
-    rulesButton.textContent = rulesMessage.hidden
-        ? "📖 Comprendre les points"
-        : "📕 Fermer les règles";
-});
+        rulesButton.textContent = rulesMessage.hidden
+            ? "📖 Comprendre les points"
+            : "📕 Fermer les règles";
+    });
+}
 });
