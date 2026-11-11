@@ -183,4 +183,9 @@
     background: #13a66b;
     border-radius: 20px;
     transition: width 0.4s ease;
+}.mission-intro {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
