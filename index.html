@@ -2,188 +2,116 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#102b50">
-    <title>PubCash - Espace de récompenses</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07152e">
+  <title>PubCash - Football et récompenses</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07152e;
+      color: white;
+    }
+    header {
+      padding: 22px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0c2041;
+    }
+    .logo { font-size: 25px; font-weight: bold; color: #36dc91; }
+    .hero {
+      text-align: center;
+      padding: 55px 20px 35px;
+      background: linear-gradient(145deg, #102e55, #07152e);
+    }
+    .hero h1 { font-size: 32px; margin-bottom: 12px; }
+    .hero p { color: #c4d1e5; line-height: 1.6; }
+    .sections {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .card {
+      background: #102447;
+      border: 1px solid #29456c;
+      border-radius: 18px;
+      padding: 22px 17px;
+      text-align: center;
+    }
+    .emoji { font-size: 43px; }
+    .card h2 { margin: 12px 0; }
+    .card p { color: #c4d1e5; line-height: 1.5; font-size: 14px; }
+    button {
+      border: 0;
+      border-radius: 9px;
+      padding: 13px 18px;
+      background: #36dc91;
+      color: #07152e;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+    .football button { background: #36dc91; }
+    .rewards button { background: #ffcb55; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #9eafc8;
+      font-size: 12px;
+    }
+    @media(max-width: 520px) {
+      .sections { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 27px; }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>PubCash</h1>
-    <p>Regardez. Participez. Gagnez.</p>
+  <div class="logo">PubCash</div>
+  <div>🌍 International</div>
 </header>
 
-<main class="content">
+<section class="hero">
+  <h1>Bienvenue sur PubCash</h1>
+  <p>Le football, l'information et les récompenses réunis dans une seule plateforme.</p>
+</section>
 
-    <!-- Navigation connexion / inscription -->
-    <div class="auth-switch">
-        <button type="button" id="showLogin">Se connecter</button>
-        <button type="button" id="showSignup">Créer un compte</button>
-    </div>
+<main class="sections">
 
-    <!-- Connexion -->
-    <section class="login">
-        <h2>Se connecter</h2>
-        <p>Heureux de vous revoir sur PubCash !</p>
+  <section class="card football">
+    <div class="emoji">⚽</div>
+    <h2>FootVision</h2>
+    <p>Suivez les actualités du football, les matchs, les résultats, les statistiques et les analyses.</p>
+    <button onclick="alert('Espace FootVision : développement en cours !')">
+      Explorer le football
+    </button>
+  </section>
 
-        <form id="loginForm">
-            <label for="loginEmail">Adresse e-mail</label>
-            <input type="email" id="loginEmail"
-                   placeholder="Votre adresse e-mail" required>
-
-            <label for="loginPassword">Mot de passe</label>
-            <input type="password" id="loginPassword"
-                   placeholder="Votre mot de passe" required>
-
-            <button type="submit">Se connecter</button>
-        </form>
-
-        <p id="loginMessage"></p>
-    </section>
-
-    <!-- Inscription -->
-    <section class="signup">
-        <h2>Créer un compte</h2>
-        <p>Rejoignez la communauté PubCash !</p>
-
-        <form id="signupForm">
-            <label for="fullname">Nom complet</label>
-            <input type="text" id="fullname"
-                   placeholder="Votre nom complet" required>
-
-            <label for="email">Adresse e-mail</label>
-            <input type="email" id="email"
-                   placeholder="Votre adresse e-mail" required>
-
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password"
-                   placeholder="Créer un mot de passe"
-                   minlength="8" required>
-
-            <label for="confirmPassword">Confirmer le mot de passe</label>
-            <input type="password" id="confirmPassword"
-                   placeholder="Confirmer le mot de passe"
-                   minlength="8" required>
-
-            <button type="submit">Créer mon compte</button>
-        </form>
-
-        <p id="signupMessage"></p>
-    </section>
-
-    <!-- Tableau de bord -->
-    <section id="dashboard" hidden>
-
-        <h2>Bienvenue sur PubCash 👋</h2>
-        <p>Votre espace personnel de récompenses</p>
-
-        <!-- Portefeuille -->
-        <section class="wallet">
-            <h3>💳 Mon portefeuille</h3>
-            <h2 id="walletBalance">0,00 $</h2>
-            <p>Solde disponible de démonstration</p>
-        </section>
-
-        <!-- Points -->
-        <section class="points">
-            <h3>⭐ Mes points PubCash</h3>
-
-            <h2 id="pointsBalance">0 points</h2>
-
-            <p>Accumulez des points en réalisant des missions.</p>
-
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-
-            <div class="points-info">
-                <span>Objectif de démonstration</span>
-                <strong>1 000 points</strong>
-            </div>
-
-            <button type="button" id="rulesButton">
-                📖 Comprendre les points
-            </button>
-
-            <p id="rulesMessage" hidden>
-                Réalisez des missions pour accumuler des points.
-                Les conditions de conversion et de retrait seront
-                précisées avant le lancement officiel de PubCash.
-            </p>
-        </section>
-
-        <!-- Missions -->
-        <section class="missions">
-            <h3>🎯 Missions disponibles</h3>
-
-            <p class="mission-intro">
-                Choisissez une mission, participez et accumulez
-                des points PubCash.
-            </p>
-
-            <div class="mission">
-                <p>📺 Regarder une publicité</p>
-                <button type="button" id="adMission">
-                    Participer
-                </button>
-            </div>
-
-            <div class="mission">
-                <p>📝 Répondre à un sondage</p>
-                <button type="button" id="surveyMission">
-                    Participer
-                </button>
-            </div>
-
-            <div class="mission">
-                <p>👥 Inviter un ami</p>
-                <button type="button" id="inviteMission">
-                    Participer
-                </button>
-            </div>
-        </section>
-
-        <!-- Historique -->
-        <section class="history">
-            <h3>📊 Historique des transactions</h3>
-
-            <div class="transaction">
-                <span>Bonus de bienvenue</span>
-                <strong>+0,00 $</strong>
-            </div>
-
-            <div class="transaction">
-                <span>Points gagnés</span>
-                <strong>0 point</strong>
-            </div>
-
-            <p class="empty-history">
-                Vos transactions apparaîtront ici.
-            </p>
-        </section>
-
-        <!-- Retraits -->
-        <section class="withdraw">
-            <h3>💰 Retrait</h3>
-            <p>
-                Consultez ici les futures possibilités de retrait
-                de vos récompenses.
-            </p>
-
-            <button type="button" id="withdrawButton">
-                Demander un retrait
-            </button>
-        </section>
-
-    </section>
+  <section class="card rewards">
+    <div class="emoji">💰</div>
+    <h2>PubCash Rewards</h2>
+    <p>Découvrez les publications sponsorisées, consultez les publicités et accumulez des récompenses.</p>
+    <button onclick="alert('Espace PubCash Rewards : développement en cours !')">
+      Découvrir les récompenses
+    </button>
+  </section>
 
 </main>
 
-<script src="script.js"></script>
+<footer>
+  PubCash © 2026 — Football, informations et récompenses.
+</footer>
 
 </body>
 </html>
+
 
 
