@@ -152,3 +152,19 @@
     text-align: center;
     margin-bottom: 0;
 }
+.points-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 12px;
+    background: #e8f7ef;
+    border-radius: 10px;
+    color: #102b50;
+    font-size: 13px;
+}
+
+.points-info strong {
+    color: #13a66b;
+}
