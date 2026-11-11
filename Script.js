@@ -1,28 +1,45 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const missions = document.querySelectorAll(".mission button");
-    const retrait = document.querySelector(".withdraw button");
+    const form = document.getElementById("signupForm");
+    const dashboard = document.getElementById("dashboard");
+    const message = document.getElementById("signupMessage");
 
-    missions.forEach(function (button, index) {
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-        button.onclick = function () {
+        const fullname = document.getElementById("fullname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
 
-            const messages = [
-                "La mission publicitaire sera bientôt disponible !",
-                "Les sondages seront bientôt disponibles !",
-                "Le système d'invitation sera bientôt disponible !"
-            ];
+        if (password.length < 8) {
+            message.textContent = "Le mot de passe doit contenir au moins 8 caractères.";
+            return;
+        }
 
-            alert(messages[index]);
-        };
+        if (password !== confirmPassword) {
+            message.textContent = "Les mots de passe ne correspondent pas.";
+            return;
+        }
 
+        message.textContent = "Inscription de démonstration réussie !";
+
+        document.querySelector(".signup").hidden = true;
+        dashboard.hidden = false;
+
+        dashboard.querySelector("h2").textContent =
+            "Bienvenue sur PubCash, " + fullname + " !";
     });
 
-    if (retrait) {
-        retrait.onclick = function () {
-            alert("Le système de retrait PubCash sera bientôt disponible !");
-        };
-    }
+    document.querySelectorAll(".mission button").forEach(function (button) {
+        button.addEventListener("click", function () {
+            alert("Cette mission sera bientôt disponible !");
+        });
+    });
+
+    document.querySelector(".withdraw button").addEventListener("click", function () {
+        alert("Les retraits seront bientôt disponibles !");
+    });
 
 });
