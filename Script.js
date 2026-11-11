@@ -95,5 +95,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".withdraw button").addEventListener("click", function () {
         alert("Les retraits seront bientôt disponibles !");
     });
+const rulesButton = document.getElementById("rulesButton");
+const rulesMessage = document.getElementById("rulesMessage");
 
+rulesButton.addEventListener("click", function () {
+    rulesMessage.hidden = !rulesMessage.hidden;
+
+    rulesButton.textContent = rulesMessage.hidden
+        ? "📖 Comprendre les points"
+        : "📕 Fermer les règles";
+});
 });
