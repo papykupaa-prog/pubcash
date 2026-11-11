@@ -1,106 +1,53 @@
 
-* {
-    box-sizing: border-box;
+.signup {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    color: #172b45;
-}
-
-header {
-    background: #102b50;
-    color: white;
-    padding: 25px 15px;
+.signup h2 {
+    color: #102b50;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
-    letter-spacing: 1px;
+.signup > p {
+    text-align: center;
+    color: #64748b;
 }
 
-header p {
-    margin-bottom: 0;
-    color: #cbd5e1;
-}
-
-.content {
-    max-width: 600px;
-    margin: auto;
-    padding: 25px 18px;
-}
-
-.content > h2 {
-    color: #102b50;
-}
-
-.wallet,
-.points,
-.missions,
-.withdraw {
-    background: white;
-    padding: 22px;
-    margin: 18px 0;
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-}
-
-.wallet {
-    background: #102b50;
-    color: white;
-}
-
-.wallet h2 {
-    font-size: 36px;
-    color: #35d49a;
-    margin: 12px 0;
-}
-
-.points h2 {
-    color: #13a66b;
-    font-size: 28px;
-}
-
-.mission {
+.signup form {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 12px 0;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.mission:last-child {
-    border-bottom: none;
+.signup label {
+    font-weight: bold;
+    color: #172b45;
 }
 
-button {
-    background: #13a66b;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0e8756;
-}
-
-.withdraw button {
+.signup input {
     width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.signup input:focus {
+    outline: 2px solid #13a66b;
+    border-color: #13a66b;
+}
+
+.signup form button {
+    margin-top: 10px;
     padding: 15px;
     font-size: 16px;
 }
 
-@media (max-width: 400px) {
-    .mission {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+#signupMessage {
+    color: #13a66b;
+    font-weight: bold;
 }
