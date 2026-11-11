@@ -119,3 +119,36 @@
 .auth-switch button:last-child {
     background: #13a66b;
 }
+
+.history {
+    background: white;
+    padding: 22px;
+    margin: 18px 0;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.history h3 {
+    color: #102b50;
+    margin-top: 0;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 10px;
+}
+
+.transaction strong {
+    color: #13a66b;
+}
+
+.empty-history {
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 0;
+}
