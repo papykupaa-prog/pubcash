@@ -99,3 +99,23 @@
     padding: 15px;
     font-size: 16px;
 }
+
+.auth-switch {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.auth-switch button {
+    flex: 1;
+    padding: 14px 8px;
+    font-size: 14px;
+}
+
+.auth-switch button:first-child {
+    background: #102b50;
+}
+
+.auth-switch button:last-child {
+    background: #13a66b;
+}
