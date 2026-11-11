@@ -1,104 +1,142 @@
 
+/* =================================
+   PUBCASH - STYLE GENERAL
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172b45;
+    line-height: 1.5;
+}
+
+header {
+    background: linear-gradient(135deg, #102b50, #164575);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #dce8f5;
+    font-size: 15px;
+}
+
+.content {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 0 16px;
+}
+
+/* =================================
+   BOUTONS GENERAUX
+================================= */
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    background: #13a66b;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+/* =================================
+   CONNEXION ET INSCRIPTION
+================================= */
+
+.login,
 .signup {
     background: white;
     padding: 25px;
     margin: 20px 0;
-    border-radius: 15px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
+.login h2,
 .signup h2 {
     color: #102b50;
     text-align: center;
+    margin-top: 0;
 }
 
+.login > p,
 .signup > p {
     text-align: center;
     color: #64748b;
 }
 
+.login form,
 .signup form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+.login label,
 .signup label {
     font-weight: bold;
     color: #172b45;
 }
 
+.login input,
 .signup input {
     width: 100%;
     padding: 14px;
     border: 1px solid #cbd5e1;
-    border-radius: 8px;
+    border-radius: 9px;
     font-size: 16px;
+    background: #f8fafc;
 }
 
+.login input:focus,
 .signup input:focus {
     outline: 2px solid #13a66b;
     border-color: #13a66b;
 }
 
+.login form button,
 .signup form button {
     margin-top: 10px;
     padding: 15px;
-    font-size: 16px;
 }
 
+#loginMessage,
 #signupMessage {
     color: #13a66b;
     font-weight: bold;
+    font-size: 14px;
 }
 
-.login {
-    background: white;
-    padding: 25px;
-    margin: 20px 0;
-    border-radius: 15px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
-}
-
-.login h2 {
-    color: #102b50;
-    text-align: center;
-}
-
-.login > p {
-    text-align: center;
-    color: #64748b;
-}
-
-.login form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.login label {
-    font-weight: bold;
-    color: #172b45;
-}
-
-.login input {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-.login input:focus {
-    outline: 2px solid #13a66b;
-    border-color: #13a66b;
-}
-
-.login form button {
-    margin-top: 10px;
-    padding: 15px;
-    font-size: 16px;
-}
+/* =================================
+   NAVIGATION AUTHENTIFICATION
+================================= */
 
 .auth-switch {
     display: flex;
@@ -120,38 +158,81 @@
     background: #13a66b;
 }
 
-.history {
-    background: white;
-    padding: 22px;
-    margin: 18px 0;
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+/* =================================
+   TABLEAU DE BORD
+================================= */
+
+#dashboard > h2 {
+    color: #102b50;
+    font-size: 25px;
+    margin-bottom: 5px;
 }
 
-.history h3 {
+#dashboard > p {
+    color: #64748b;
+    margin-top: 0;
+}
+
+/* =================================
+   CARTES
+================================= */
+
+.wallet,
+.points,
+.missions,
+.history,
+.withdraw {
+    background: white;
+    padding: 23px;
+    margin: 20px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.wallet h3,
+.points h3,
+.missions h3,
+.history h3,
+.withdraw h3 {
     color: #102b50;
     margin-top: 0;
 }
 
-.transaction {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
-    border-bottom: 1px solid #e2e8f0;
-    gap: 10px;
+/* =================================
+   PORTEFEUILLE
+================================= */
+
+.wallet {
+    background: linear-gradient(135deg, #102b50, #164575);
+    color: white;
 }
 
-.transaction strong {
+.wallet h3,
+.wallet h2,
+.wallet p {
+    color: white;
+}
+
+.wallet h2 {
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+/* =================================
+   POINTS
+================================= */
+
+.points h2 {
     color: #13a66b;
+    font-size: 29px;
+    margin: 10px 0;
 }
 
-.empty-history {
+.points > p {
     color: #64748b;
-    font-size: 13px;
-    text-align: center;
-    margin-bottom: 0;
+    font-size: 14px;
 }
+
 .points-info {
     display: flex;
     justify-content: space-between;
@@ -168,6 +249,7 @@
 .points-info strong {
     color: #13a66b;
 }
+
 .progress-bar {
     width: 100%;
     height: 12px;
@@ -183,9 +265,137 @@
     background: #13a66b;
     border-radius: 20px;
     transition: width 0.4s ease;
-}.mission-intro {
+}
+
+#rulesButton {
+    margin-top: 18px;
+    background: #102b50;
+    width: 100%;
+}
+
+#rulesMessage {
+    background: #f1f5f9;
+    padding: 14px;
+    border-radius: 10px;
+    color: #475569;
+    font-size: 14px;
+}
+
+/* =================================
+   MISSIONS
+================================= */
+
+.mission-intro {
     color: #64748b;
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.mission {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.mission:last-child {
+    border-bottom: none;
+}
+
+.mission p {
+    color: #172b45;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mission button {
+    flex-shrink: 0;
+    padding: 11px 14px;
+    font-size: 13px;
+}
+
+/* =================================
+   HISTORIQUE
+================================= */
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.transaction strong {
+    color: #13a66b;
+}
+
+.empty-history {
+    color: #64748b;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* =================================
+   RETRAITS
+================================= */
+
+.withdraw p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.withdraw button {
+    width: 100%;
+    margin-top: 10px;
+    background: #102b50;
+}
+
+/* =================================
+   AFFICHAGE MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 29px;
+    }
+
+    .content {
+        padding: 0 12px;
+        margin: 18px auto;
+    }
+
+    .login,
+    .signup,
+    .wallet,
+    .points,
+    .missions,
+    .history,
+    .withdraw {
+        padding: 19px;
+    }
+
+    .mission {
+        align-items: center;
+    }
+
+    .mission p {
+        font-size: 13px;
+    }
+
+    .mission button {
+        padding: 10px;
+        font-size: 12px;
+    }
 }
