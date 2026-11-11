@@ -1,20 +1,28 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const button = document.querySelector("button");
+    const missions = document.querySelectorAll(".mission button");
+    const retrait = document.querySelector(".withdraw button");
 
-    if (button) {
-        button.addEventListener("click", function () {
+    missions.forEach(function (button, index) {
 
-            const name = prompt("Bienvenue sur PubCash ! Quel est ton prénom ?");
+        button.onclick = function () {
 
-            if (name && name.trim() !== "") {
-                alert("Bonjour " + name + " ! Bienvenue dans la communauté PubCash.");
-            } else {
-                alert("Bienvenue sur PubCash !");
-            }
+            const messages = [
+                "La mission publicitaire sera bientôt disponible !",
+                "Les sondages seront bientôt disponibles !",
+                "Le système d'invitation sera bientôt disponible !"
+            ];
 
-        });
+            alert(messages[index]);
+        };
+
+    });
+
+    if (retrait) {
+        retrait.onclick = function () {
+            alert("Le système de retrait PubCash sera bientôt disponible !");
+        };
     }
 
 });
