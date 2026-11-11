@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PubCash - Gagnez des récompenses</title>
+    <title>PubCash</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,42 +16,65 @@
 
 <main class="content">
 
-    <h2>Bienvenue sur PubCash 👋</h2>
-    <p>Votre espace de récompenses</p>
+    <section class="signup">
+        <h2>Créer un compte</h2>
+        <p>Rejoignez la communauté PubCash !</p>
 
-    <section class="wallet">
-        <h3>Mon portefeuille</h3>
-        <h2>0,00 $</h2>
-        <p>Solde disponible</p>
+        <form id="signupForm">
+            <label for="fullname">Nom complet</label>
+            <input type="text" id="fullname" placeholder="Votre nom complet" required>
+
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" placeholder="Votre adresse e-mail" required>
+
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" placeholder="Créer un mot de passe" minlength="8" required>
+
+            <label for="confirmPassword">Confirmer le mot de passe</label>
+            <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" minlength="8" required>
+
+            <button type="submit">Créer mon compte</button>
+        </form>
+
+        <p id="signupMessage"></p>
     </section>
 
-    <section class="points">
-        <h3>Mes points</h3>
-        <h2>0 points</h2>
-    </section>
+    <section id="dashboard" hidden>
+        <h2>Bienvenue sur PubCash 👋</h2>
+        <p>Votre espace de récompenses</p>
 
-    <section class="missions">
-        <h3>🎯 Missions disponibles</h3>
-        <div class="mission">
-            <p>📺 Regarder une publicité</p>
-            <button onclick="alert('Bientôt disponible !')">Participer</button>
-        </div>
-        <div class="mission">
-            <p>📝 Répondre à un sondage</p>
-            <button onclick="alert('Bientôt disponible !')">Participer</button>
-        </div>
-        <div class="mission">
-            <p>👥 Inviter un ami</p>
-            <button onclick="alert('Bientôt disponible !')">Participer</button>
-        </div>
-    </section>
+        <section class="wallet">
+            <h3>Mon portefeuille</h3>
+            <h2>0,00 $</h2>
+            <p>Solde disponible</p>
+        </section>
 
-    <section class="withdraw">
-        <h3>💰 Retrait</h3>
-        <p>Vos futurs gains pourront être retirés ici.</p>
-        <button onclick="alert('Le retrait sera bientôt disponible !')">
-            Demander un retrait
-        </button>
+        <section class="points">
+            <h3>Mes points</h3>
+            <h2>0 points</h2>
+        </section>
+
+        <section class="missions">
+            <h3>🎯 Missions disponibles</h3>
+            <div class="mission">
+                <p>📺 Regarder une publicité</p>
+                <button type="button">Participer</button>
+            </div>
+            <div class="mission">
+                <p>📝 Répondre à un sondage</p>
+                <button type="button">Participer</button>
+            </div>
+            <div class="mission">
+                <p>👥 Inviter un ami</p>
+                <button type="button">Participer</button>
+            </div>
+        </section>
+
+        <section class="withdraw">
+            <h3>💰 Retrait</h3>
+            <p>Vos futurs gains pourront être retirés ici.</p>
+            <button type="button">Demander un retrait</button>
+        </section>
     </section>
 
 </main>
@@ -59,3 +82,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
